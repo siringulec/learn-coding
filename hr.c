@@ -1,33 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-
 /*
 int main(int argc, char const *argv[])
-{
-    int* pc, c, d;
-    c = 5;
-    d = -15;
+{ 
+    int t, *A, i, j, tmp;
 
-    pc = &c; >>>>>>> 6dcaea4ac4ce6c089183dd3ba8fb4e35a233ae8f
-    printf("%d\n", *pc); 
-    pc = &d; 
-    printf("%d\n", *pc); 
+    scanf("%d", &t);
+
+    for ( i = 0; i < t; i++)
+    {
+        scanf("%d", A + i);
+    }
+
+    j = t - 1;
+>>>>>>> Stashed changes
+    for(i = 0; i < t/2; i++)
+    {
+        tmp = A[i];
+        A[i] = A[j];
+        A[j] = tmp;
+        j -= 1;
+    }
+
+    for(i = 0; i < t; i++)
+    {
+        printf("%d ", *(A + i));
+    }
     
     return 0;
-}
-
-
-int main() {
-   int x[4];
-   int i;
-
-   for(i = 0; i < 4; ++i) {
-      printf("&x[%d] = %p\n", i, &x[i]);
-   }
-
-   printf("%d", &x);
-
-   return 0;>>>>>>> 6dcaea4ac4ce6c089183dd3ba8fb4e35a233ae8f
-}
-*/
+}*/

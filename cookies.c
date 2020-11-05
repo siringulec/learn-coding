@@ -30,6 +30,7 @@ int main(int argc, char const *argv[])
     //sort array first    
     
     
+    
     //not  workin???
     while(*c < k)
     {
@@ -57,6 +58,7 @@ int main(int argc, char const *argv[])
         output += 1;
     }
     
+    //print result
     printf("The new  array:");
     
     for(i = 0; i < n; i++)
