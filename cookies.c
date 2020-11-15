@@ -1,9 +1,11 @@
 #include <stdio.h>
 #define  MAX_LEN 1000
 
+int sort(int* a);
+
 int main(int argc, char const *argv[])
 {
-    int n, k, c[MAX_LEN], i, j, tmp, output = 0, min;
+    int n, k, c[MAX_LEN], i, j, tmp, output = 0;
 
     //take input
     printf("Please enter number of cookies and min sweetness with a space in between:");
@@ -80,5 +82,8 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
+int sort(int* a)
+{
 
+}
 
