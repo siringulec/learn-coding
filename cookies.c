@@ -5,7 +5,7 @@ int sort(int* a);
 
 int main(int argc, char const *argv[])
 {
-    int n, k, c[MAX_LEN], i, j, tmp, output = 0;
+    int* c, n, k, i, j, tmp, output = 0;
 
     //take input
     printf("Please enter number of cookies and min sweetness with a space in between:");
@@ -18,6 +18,8 @@ int main(int argc, char const *argv[])
         printf("%d-", i+1);
         scanf("%d", c + i);
     }
+    
+    c = (int*)malloc(n * sizeof(int));
     
     //print input array
     printf("Your array:");
@@ -79,6 +81,7 @@ int main(int argc, char const *argv[])
         printf("Number of oparations you need:%d\n", output);
     }
     
+    free(c);
     return 0;
 }
 
