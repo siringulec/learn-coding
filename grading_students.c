@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MAX_LEN 100
+#include <stdlib.h>
 
 void rounder(int* g, int n)
 {
@@ -7,7 +7,7 @@ void rounder(int* g, int n)
     {
         int q = g[i]%5;
 
-        if(q != 0 && q > 2 && g[i] > 38)
+        if(q != 0 && q > 2 && g[i] >= 38)
         {
             int d = g[i] / 5;
             g[i] = (d + 1)*5; 
@@ -23,6 +23,8 @@ int main(int argc, char const *argv[])
     printf("Enter an integer:");
     scanf("%d", &n);
 
+    g = (int*) malloc(n * sizeof(int));
+
     printf("Enter the grades:");
 
     for(i = 0; i < n; i++)
@@ -33,9 +35,10 @@ int main(int argc, char const *argv[])
     for(i = 0; i < n; i++)
     {  
         rounder(g, n);
-        printf("%d", g[i]);
+        printf("%d\n", g[i]);
     }
 
+    free(g);
     return 0;
 }
 
