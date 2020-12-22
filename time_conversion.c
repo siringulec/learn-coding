@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
 
 // #define DATE_SIZE 20
 
@@ -31,19 +32,19 @@
 //     return sonuc; 
 // }
 
-int main(int argc, char const *argv[])
-{
-    if(argc != 2) {
-        printf("Parola girilmedi!!!\n");
-        return -1;
-    }
+//int main(int argc, char const *argv[])
+//{
+    //if(argc != 2) {
+        //printf("Parola girilmedi!!!\n");
+        //return -1;
+   // }
 
-    if(!strcmp("dost", argv[1]))
-        printf("Hosgeldiniz efendiler ...\n");
-    else {
-        printf("You shall not pass !!!!!\n");
-        return -2;
-    }
+    //if(!strcmp("dost", argv[1]))
+        //printf("Hosgeldiniz efendiler ...\n");
+    //else {
+        //printf("You shall not pass !!!!!\n");
+        //return -2;
+    //}
         
     //     int sirin_length;
     // char *sirin;
@@ -59,5 +60,13 @@ int main(int argc, char const *argv[])
 
     // printf("Lutfen bir karakter dizisi giriniz :");
     
+    //return 0;
+//}
+
+int main(int argc, char const *argv[])
+{
+    int a = 100;
+    printf("%d", log(a));
     return 0;
 }
+
