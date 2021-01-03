@@ -2,15 +2,15 @@
 #include<stdlib.h>
 #include<time.h>
 
-int first_dice_roll(void);
-int roll_to_win(int n);
+int dice_roll(void);
+void game_logic(void);
+void game_loop(int n);
 
 int main(void)
 {
-    int roll, win_roll, try = 1;
     char start, dummy;
 
-    srand((unsigned) time(0));
+    srand(time(NULL));
 
     printf("Start the game [y, n]:");
     scanf("%c", &start);
@@ -20,56 +20,90 @@ int main(void)
         printf("Let's start!!\n");
     }
     else if(start == 'n'){
-        printf("Okay :(\n");
         exit (0);
     }
     else{
         printf("Invalid entry.\n");
         exit (0);
     }
-
-    roll = first_dice_roll();
-
-    if(roll == 7 || roll == 11){
-        printf("You won at fist try!!!\n");
-        exit (0);
-    }
-    else if(roll == 2 || roll == 3 || roll == 12){
-        printf("You lost :(\n");
-        exit (0);
-    }
-    
-    win_roll = roll;
-    printf("Now you need to roll a %d to win.\n", win_roll);
-    try = roll_to_win(win_roll);
-    printf("It took you %d tries to win.\n", try);
-
+    game_logic();
     return 0;
 }
 
-int first_dice_roll(void)
+int dice_roll(void)
 {
-    int dice1, dice2, roll, win_roll;
+    int dice1, dice2, roll;
 
     dice1 = 1 + rand()%6;
     dice2 = 1 + rand()%6;
-    roll = dice1 + dice2;    
-    printf("You rolled: %d + %d = %d\n", dice1, dice2, roll);  
-
+    roll = dice1 + dice2; 
+    printf("You rolled: %d + %d = %d\n", dice1, dice2, roll);   
+    
     return roll;
 }
 
-int roll_to_win(int n)
+void game_logic(void)
 {
-    int dice1, dice2, roll, i = 1;
-
-    do{
-        dice1 = 1 + rand()%6;
-        dice2 = 1 + rand()%6;
-        roll = dice1 + dice2;
-        printf("You rolled: %d + %d = %d\n", dice1, dice2, roll);
-        i++;
-    } while (roll != n);
+    int roll, win_roll, win = 1, try = 1;
     
-    return i;
+    roll = dice_roll(); 
+
+    if(roll == 7 || roll == 11){
+        game_loop(win);
+    }
+    else if(roll == 2 || roll == 3 || roll == 12){
+        win = 0;
+        game_loop(win);
+    }
+    else{
+        win_roll = roll; 
+    }
+    
+    printf("Now you need to roll a %d to win. But if you roll a 7 you lose.\n", win_roll);
+   
+    roll = dice_roll();
+    if(roll == 7){
+        win = 0;
+        try +=1;
+        game_loop(win);
+    }
+
+    while (roll != win_roll){    
+        roll = dice_roll();
+        if(roll == 7){
+            win = 0;
+            game_loop(win);
+        }
+        try +=1;
+    }
+    printf("It took you %d tries.\n", try);
+    game_loop(win);
+}
+
+void game_loop(int n)
+{
+    char start, dummy;
+
+    if(n == 1){
+        printf("You won!!!!\n");
+    }
+    else{
+        printf("You lost :(\n");
+    }
+
+    printf("Do you wanna play again [y, n]:");
+    scanf("%c", &start);
+    scanf("%c", &dummy);
+
+    if(start == 'y'){
+        game_logic();
+    }
+    else if(start == 'n'){
+        printf("Okay.\n");
+        exit (0);
+    }
+    else{
+        printf("Invalid entry.\n");
+        exit (0);
+    }
 }
