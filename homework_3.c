@@ -56,7 +56,8 @@ void game_logic(void)
         game_loop(win);
     }
     else{
-        win_roll = roll; 
+        win_roll = roll;
+        try +=1;
     }
     
     printf("Now you need to roll a %d to win. But if you roll a 7 you lose.\n", win_roll);
@@ -99,7 +100,6 @@ void game_loop(int n)
         game_logic();
     }
     else if(start == 'n'){
-        printf("Okay.\n");
         exit (0);
     }
     else{
