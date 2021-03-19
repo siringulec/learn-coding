@@ -13,9 +13,7 @@ int main(void)
                        {62, 64, 77, 83, 90}};
 
     total = sum_matrix(martrix);
-
     printf("The sum of the matrix is %d.\n", total);     
-
     occurrence = repeated_digits(total);
 
     if(occurrence == 0){
