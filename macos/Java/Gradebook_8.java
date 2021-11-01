@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class Gradebook_8 {
+public class Gradebook_8 { //start of class
 
     private String courseName;
     int aCount = 0;
@@ -14,7 +14,7 @@ public class Gradebook_8 {
     int grade;
     double average;
 
-    public Gradebook_8(String courseName){
+    public Gradebook_8(String courseName){ // constructor
         this.courseName = courseName;
     }
 
@@ -29,43 +29,45 @@ public class Gradebook_8 {
 
     public void inputGrades(){
 
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter -1 if you want to terminate input of grade.\n" + "Enter grade for every student: ");
-        grade = input.nextInt();
+        Scanner input = new Scanner(System.in); // defines scaner variable input
+        System.out.println("Enter -1 if you want to terminate input of grade.\n");
+        System.out.println("Enter grade for every student: ");
+        grade = input.nextInt(); // takes an integer as input
 
         while(grade != -1){
-            total += grade;
-            gradeCounter++;
-            incrementgradeCounter(grade);
-            System.out.println("Enter -1 if you want to terminate input of grade.\n" + "Enter grade for every student: ");
-            grade = input.nextInt();
+            total += grade; // adds all entered grades together
+            gradeCounter++; // adds +1 to nuber of students
+            incrementgradeCounter(grade); // calls method
+            System.out.println("Enter -1 if you want to terminate input of grade.\n");
+            System.out.println("Enter grade for every student: ");
+            grade = input.nextInt(); // takes an integer as input
         }
 
-        if (gradeCounter != 0){
-            average = (double)total/gradeCounter;
+        if (gradeCounter != 0){ // if any gardes were entered
+            average = (double)total/gradeCounter; // takes the average of all grades total
             System.out.println("The total grades of all students is " + total + ".");
             System.out.println("Averageof the total grade of all students is " + average + ".");
             System.out.println("The number of all students in the class is " + gradeCounter + ".");
         }
-        else {
+        else { // if nuber of students is zero
             System.out.println("No grades were entered.");
         }
     }
 
 
     private void incrementgradeCounter(int grade){
-        switch(grade/10){
+        switch(grade/10){ // takes all grades and checks if they are A, B, C, D of F
         case 9:
-        case 10: ++aCount; break;
-        case 8: ++bCount; break;
-        case 7: ++cCount; break;
-        case 6: ++dCount; break;
-        default: ++fCount; break;
+        case 10: ++aCount; break; // counts A
+        case 8: ++bCount; break; // counts B
+        case 7: ++cCount; break;  // counts C
+        case 6: ++dCount; break;  // counts D
+        default: ++fCount; break;  // counts F
         }
     }
 
 
-    public void displayGradeReport(){
+    public void displayGradeReport(){ // outputs colleted data
 
         System.out.println("Grade Report\n");
 
@@ -81,7 +83,7 @@ public class Gradebook_8 {
             System.out.println("The amount of students that got an F: " + fCount);
         }
         else {
-            System.out.println("No grades were entered.");
+            System.out.println("No grades were entered."); // if nuber of students is zero
         }
     }
-}
+} // end of class
