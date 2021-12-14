@@ -4,7 +4,7 @@ public class pattern_draw {
 
         Random random = new Random();
         int n, i, j, space, half1, half2;
-        n = random.nextInt(15) + 10;
+        n = random.nextInt(100) + 3;
         if (n % 2 == 0)
             n++;
         System.out.println("n: " + n);
@@ -35,4 +35,3 @@ public class pattern_draw {
         }
     }
 }
-f
