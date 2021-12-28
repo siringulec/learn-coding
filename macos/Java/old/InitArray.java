@@ -1,15 +1,18 @@
 public class InitArray {
     public static void main(String[] args) {
-        int i;
-        final int ARRAY_LENGTH = 10;
-        int array[] = new int[ARRAY_LENGTH];
-        for (i = 0; i < 10; i++) {
-            array[i] = 2 + 2 * i;
+        int array1[][] = {{1,2,3}, {4,5,6}};
+        int array2[][] = {{1,2}, {3}, {4,5,6}};
+        System.out.println( "Values in array1 by row are" );
+        outputArray( array1 );
+        System.out.println( "\nValues in array2 by row are" );
+        outputArray( array2 );
+    }
+    public static void outputArray(int arr[][]){
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.printf("%d ", arr[i][j]);
+            }
+            System.out.println();
         }
-        System.out.printf("%s%8s\n", "Index", "Value");
-        for (i = 0; i < 10; i++) {
-            System.out.printf("%5d%8d\n", i, array[i]);
-        }
-
     }
 }

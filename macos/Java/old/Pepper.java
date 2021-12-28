@@ -1,3 +1,3 @@
-public interface Apple {
+public interface Pepper {
     public String getName();
 }
