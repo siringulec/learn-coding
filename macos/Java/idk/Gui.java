@@ -16,7 +16,7 @@ public class Gui {
 
     public static void GamePlay(){
         int computerNumber = (int) (Math.random()*100 + 1);
-        int userAnswer = 0, count = 1, guess = 10;
+        int userAnswer = 0, count = 1, guess = 3nn;
         System.out.println("The correct guess would be " + computerNumber);
 
         while (userAnswer != computerNumber && count < guess+1)
