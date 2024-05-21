@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<style>
+      .sub-button, tweet-button, join-button{
+          margin-bottom: 10px;
+      }
+      .sub-button {
+          background-color: rgb(200, 0, 0);
+          color: white;
+          border: none;
+          height: 40px;
+          width: 105px;
+          border-radius: 5px;
+          cursor: pointer;
+          margin-right: 8px;
+      }
+      .join-button {
+          background-color: white;
+          color: blue;
+          border: solid;
+          height: 40px;
+          width: 70px;
+          border-radius: 2px;
+          border-width: 1px;
+          cursor: pointer;
+      }
+      .tweet-button {
+          background-color: rgb(58, 169, 242);
+          color: white;
+          border: none;
+          height: 40px;
+          width: 90px;
+          border-radius: 100px;
+          cursor: pointer;
+      }
+      table, td, tr {
+          width: 50%;
+          border: 3px solid blue;
+          border-collapse: collapse;
+          text-align: center;
+          margin-bottom: 10px;
+          background-color: lightblue;
+          color: magenta;
+          font-size: 20px;
+          font-family: Helvetica;
+          
+      }
+      td {
+          height: 50px;
+      }
+      .div-table {
+            width: 50%;
+            border: 1px solid black;
+        }
+        .header, .nav, .footer {
+            height: 50px;
+            clear: both;
+            text-align: center;
+            line-height: 50px;
+            border-bottom: 1px solid black; 
+        }
+        .left-column, .right-column {
+            width: 50%; 
+            float: left;
+            box-sizing: border-box; 
+        }
+        .section, .article, .aside {
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid black; 
+        }
+        .aside {
+            height: 202px;
+            line-height: 200px;
+        }
+</style>
+</head>
+
+
+<body>
+  <table>
+    <tr>
+      <td colspan="2">Header</td>
+    </tr>
+    <tr>
+      <td colspan="2">Nav</td>
+    </tr>
+    <tr>
+      <td>Section</td>
+      <td rowspan="2" >Aside</td>
+    </tr>
+    <tr>
+      <td>Article</td>
+    </tr>
+    <tr>
+      <td colspan="2">Footer</td>
+    </tr>
+  </table>
+
+
+
+  <button class="sub-button">SUBSCRIBE</button>
+  <button class="join-button">JOIN</button>
+  <button class="tweet-button">Tweet</button>
+
+
+<div class="div-table">
+    <div class="header">Header</div>
+    <div class="nav">Nav</div>
+    <div>
+        <div class="left-column">
+            <div class="section">Section</div>
+            <div class="article">Article</div>
+        </div>
+        <div class="right-column">
+            <div class="aside">Aside</div>
+        </div>
+    </div>
+    <div class="footer">Footer</div>
+</div>
+
+<p id="demo">JavaScript can change the style of an HTML element.</p>
+
+<button type="button" onclick="myFunction()">Click Me!</button>
+
+
+
+</body>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").style.fontSize = "25px"; 
+  document.getElementById("demo").style.color = "red";
+  document.getElementById("demo").style.backgroundColor = "yellow";        
+}
+</script>
+
+</html>
