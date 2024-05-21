@@ -1,2 +1,4 @@
 *.o
 prj1
+**/venv/
+**/.DS_Store
